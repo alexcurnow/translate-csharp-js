@@ -7,6 +7,7 @@ namespace insulter
     {
         static void Main(string[] args)
         {
+            // A list of insults, clearly...
             List<string> insults = new List<string>()
             {
                 "You look like what morning breath smells like.",
@@ -18,20 +19,32 @@ namespace insulter
                 "Do you have to be so...like that?"
             };
 
+            // Initialize an empty list
             List<int> indexes = new List<int>();
+
+            // Generate a random number variable
             Random random = new Random();
+
+            // While the length of our list is less that 3, do the following...
             while (indexes.Count < 3)
             {
+                // Generate a random number between 0 and 3
                 int candidate = random.Next(3);
+                // Check to see if our indexes list does NOT already contain the random numer
                 if (!indexes.Contains(candidate))
                 {
+                    // If it does not, then add it to the indexes list
                     indexes.Add(candidate);
                 }
             }
 
+            // Generate a for loop that increments int i for the length of the indexes list
             for (int i = 0; i < indexes.Count; i++)
             {
+                //store the value found at each index in the index variable
                 int index = indexes[i];
+
+                // Print each result to the console
                 Console.WriteLine(insults[index]);
             }
 
